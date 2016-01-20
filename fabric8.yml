@@ -1,0 +1,12 @@
+---
+pipeline: "workflows/node/CanaryReleaseStageAndApprovePromote/Jenkinsfile"
+buildName: "my-node-example"
+codeReview: false
+links:
+  Job: "http://jenkins.ux.fabric8.io/job/my-node-example"
+  Production: "http://fabric8.ux.fabric8.io/kubernetes/pods?namespace=my-node-example-production"
+  Staging: "http://fabric8.ux.fabric8.io/kubernetes/pods?namespace=my-node-example-staging"
+environments:
+  Staging: "my-node-example-staging"
+  Production: "my-node-example-production"
+useLocalFlow: true
