@@ -23,7 +23,7 @@ def envProd = "${env.JOB_NAME}-production"
 
 node ('kubernetes'){
 
-  git 'https://github.com/rawlingsj/node-example.git'
+  git 'https://github.com/jmlambert78/node-example.git'
 
   kubernetes.pod('buildpod').withImage('fabric8/builder-openshift-client')
       .withPrivileged(true)
