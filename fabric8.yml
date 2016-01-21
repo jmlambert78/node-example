@@ -1,11 +1,11 @@
 ---
-pipeline: "workflows/node/CanaryReleaseStageAndApprovePromote/Jenkinsfile"
-buildName: "my-node-example"
+buildName: "node-examplewithgithubsecret"
 codeReview: false
 links:
-  Job: "http://jenkins.ux.fabric8.io/job/my-node-example"
-  Production: "http://fabric8.ux.fabric8.io/kubernetes/pods?namespace=my-node-example-production"
-  Staging: "http://fabric8.ux.fabric8.io/kubernetes/pods?namespace=my-node-example-staging"
+  Job: "http://jenkins.jml.10.10.163.6.xip.io/job/node-examplewithgithubsecret"
+  Production: "http://fabric8.jml.10.10.163.6.xip.io/kubernetes/pods?namespace=my-node-example-production"
+  Staging: "http://fabric8.jml.10.10.163.6.xip.io/kubernetes/pods?namespace=my-node-example-staging"
+  Room: "http://letschat.jml.10.10.163.6.xip.io/#!/room/569fdae5adf0021500b60a8c"
 environments:
   Staging: "my-node-example-staging"
   Production: "my-node-example-production"
