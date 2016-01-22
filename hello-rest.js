@@ -1,6 +1,13 @@
 var http = require('http');
+for (var item in process.env) 
+console.log(item," = ",process.env[item]);
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello JML from the fabric8 NodeJS example');
+  res.write("<H1>Node Envvars</H1>");
+  res.write("<table>);
+for (var item in process.env) 
+  res.write("<TR><TD>",item,"</TD><TD>",process.env[item],"</TD></TR>");
+  res.write("</table>");
+  res.end();
 }).listen(8080);
 console.log('JML Server running at http://localhost:8080/');
