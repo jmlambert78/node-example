@@ -1,11 +1,12 @@
 ---
-buildName: "node-example-env"
+chatRoom: "fabric8_default"
+buildName: "node-example-envs"
 codeReview: false
 links:
-  Job: "http://jenkins.jml.10.10.163.6.xip.io/job/node-example-env"
-  Production: "http://fabric8.jml.10.10.163.6.xip.io/kubernetes/pods?namespace=my-node-example-production"
-  Staging: "http://fabric8.jml.10.10.163.6.xip.io/kubernetes/pods?namespace=my-node-example-staging"
-  Room: "http://letschat.jml.10.10.163.6.xip.io/#!/room/569fdae5adf0021500b60a8c"
+  Job: "http://jenkins.jml.openshift.paas.gemalto.com/job/node-example-envs"
+  Production: "http://fabric8.jml.openshift.paas.gemalto.com/kubernetes/pods?namespace=my-node-example-production"
+  Staging: "http://fabric8.jml.openshift.paas.gemalto.com/kubernetes/pods?namespace=my-node-example-staging"
+  Room: "http://letschat.jml.openshift.paas.gemalto.com/#!/room/56a9e5d39133da1500f5e254"
 environments:
   Staging: "my-node-example-staging"
   Production: "my-node-example-production"
