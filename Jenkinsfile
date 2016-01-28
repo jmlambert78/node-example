@@ -24,9 +24,9 @@ node ('kubernetes'){
     if (!fileExists ('Dockerfile')) {
       writeFile file: 'Dockerfile', text: 'FROM node:5.3-onbuild'
     }
-
-    kubernetes.image().withName(clusterImageName).build().fromPath(".")
-    kubernetes.image().withName(clusterImageNameWithoutTag).push().withTag(newVersion).toRegistry()
+    kubernetes.image().withName("example").build().fromPath(".")
+    //kubernetes.image().withName(clusterImageName).build().fromPath(".")
+    //kubernetes.image().withName(clusterImageNameWithoutTag).push().withTag(newVersion).toRegistry()
 
     // gitTag{
     //   releaseVersion = newVersion
