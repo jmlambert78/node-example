@@ -1,9 +1,9 @@
 ---
 chatRoom: "fabric8_default"
-buildName: "nodejswithnewworkflow"
+buildName: "node-example-new2"
 codeReview: false
 links:
-  Job: "http://jenkins.jml.openshift.paas.gemalto.com/job/nodejswithnewworkflow"
+  Job: "http://jenkins.jml.openshift.paas.gemalto.com/job/node-example-new2"
   Production: "http://fabric8.jml.openshift.paas.gemalto.com/kubernetes/pods?namespace=node-example-new2-production"
   Room: "http://letschat.jml.openshift.paas.gemalto.com/#!/room/56aa11c3e514d0150076d124"
   Staging: "http://fabric8.jml.openshift.paas.gemalto.com/kubernetes/pods?namespace=node-example-new2-staging"
