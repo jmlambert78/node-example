@@ -1,0 +1,13 @@
+---
+pipeline: "workflows/node/CanaryReleaseStageAndApprovePromote/Jenkinsfile"
+buildName: "node-example-nowf"
+codeReview: false
+links:
+  Job: "http://jenkins.jml.openshift.paas.gemalto.com/job/node-example-nowf"
+  Production: "http://fabric8.jml.openshift.paas.gemalto.com/kubernetes/pods?namespace=node-example-nowf-production"
+  Room: "http://letschat.jml.openshift.paas.gemalto.com/#!/room/56aa1242e514d0150076d125"
+  Staging: "http://fabric8.jml.openshift.paas.gemalto.com/kubernetes/pods?namespace=node-example-nowf-staging"
+environments:
+  Staging: "node-example-nowf-staging"
+  Production: "node-example-nowf-production"
+useLocalFlow: true
