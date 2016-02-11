@@ -6,6 +6,7 @@ http.createServer(function (req, res) {
   res.write("<H1>Node Envvars</H1>");
   res.write("<table>");
 for (var item in process.env) 
+  if ((item.substring(0, 3) === "npm")==false)
   res.write("<TR><TD>"+item+"</TD><TD>"+process.env[item]+"</TD></TR>");
   res.write("</table>");
   res.end();
