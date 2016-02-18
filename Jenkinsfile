@@ -7,12 +7,10 @@ node ('kubernetes'){
 
   stage 'canary release'
     if (!fileExists ('Dockerfile')) {
-      writeFile file: 'Dockerfile', text: 'FROM node:5.3'
-	  writeFile file: 'Dockerfile',text:'RUN mkdir -p /usr/src/app'
-	  writeFile file: 'Dockerfile',text:'WORKDIR /usr/src/app'
-
-	  writeFile file: 'Dockerfile',text:'COPY package.json /usr/src/app/'
-	  writeFile file: 'Dockerfile',text:'RUN npm install'
+      writeFile file: 'Dockerfile', text: 'FROM 172.30.76.253:80/default/node-example:1b10428 '
+	  writeFile file: 'Dockerfile',text: 'WORKDIR /usr/src/app'
+	  writeFile file: 'Dockerfile',text: 'COPY . /usr/src/app'
+	  writeFile file: 'Dockerfile',text: 'CMD [ "npm", "start" ]l'
     }
 
     def newVersion = performCanaryRelease {}
