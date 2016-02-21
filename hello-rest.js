@@ -11,4 +11,4 @@ for (var item in process.env)
   res.write("</table>");
   res.end();
 }).listen(8080);
-console.log('JML2 Server  running at http://localhost:8080/');
+console.log('JML3 Server  running at http://localhost:8080/');
