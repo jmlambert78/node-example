@@ -1,10 +1,9 @@
 ---
-pipeline: "workflows/node/CanaryReleaseStage/Jenkinsfile"
-buildName: "node-example3333"
+buildName: "node-example"
 codeReview: false
 links:
   Git: "https://github.com/jmlambert78/node-example"
-  Job: "http://172.30.109.142:80/job/node-example3333"
+  Job: "http://172.30.109.142:80/job/node-example"
   Staging: "http://172.30.150.175:80/kubernetes/pods?namespace=node-example3333-staging"
 environments:
   Staging: "node-example3333-staging"
