@@ -1,12 +1,11 @@
 ---
-pipeline: "workflows/node/CanaryReleaseStageAndApprovePromote/Jenkinsfile"
-buildName: "node-example98"
+buildName: "def-node-example"
 codeReview: false
 links:
   Git: "https://github.com/jmlambert78/node-example"
-  Job: "http://172.30.3.125:80/job/node-example98"
-  Staging: "http://172.30.78.171:80/kubernetes/pods?namespace=node-example98-staging"
-  Production: "http://172.30.78.171:80/kubernetes/pods?namespace=node-example98-production"
+  Job: "http://172.30.203.227:80/job/def-node-example"
+  Staging: "http://172.30.58.121:80/kubernetes/pods?namespace=node-example98-staging"
+  Production: "http://172.30.58.121:80/kubernetes/pods?namespace=node-example98-production"
 environments:
   Staging: "node-example98-staging"
   Production: "node-example98-production"
