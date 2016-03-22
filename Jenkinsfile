@@ -45,11 +45,11 @@ def performCanaryRelease(body) {
     def newVersion = getNewVersion{}
 
     env.setProperty('VERSION',newVersion)
-    println ("before build")
+    echo "before build"
     kubernetes.image().withName("${env.JOB_NAME}").build().fromPath(".")
-    println ("before tag")
+    echo "before tag"
     kubernetes.image().withName("${env.JOB_NAME}").tag().inRepository("${regPush}/${env.KUBERNETES_NAMESPACE}/${env.JOB_NAME}").withTag(newVersion)
-    println ("before push")
+    echo "before push"
     kubernetes.image().withName("${regPush}/${env.KUBERNETES_NAMESPACE}/${env.JOB_NAME}").push().withTag(newVersion).toRegistry()
 
     return newVersion
