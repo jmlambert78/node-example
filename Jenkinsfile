@@ -1,7 +1,7 @@
 #!/usr/bin/groovy
 def envStage = "${env.JOB_NAME}-staging"
 def envProd = "${env.JOB_NAME}-production"
-def regPush = "dockerhub.gemalto.com:8500"
+
 node ('kubernetes'){
 
   git 'https://github.com/jmlambert78/node-example'
@@ -37,17 +37,17 @@ node ('kubernetes'){
 def performCanaryRelease(body) {
     // evaluate the body block, and collect configuration into the object
     def config = [:]
+    def regPush = "dockerhub.gemalto.com:8500"
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
-
 
     def newVersion = getNewVersion{}
 
     env.setProperty('VERSION',newVersion)
 
     kubernetes.image().withName("${env.JOB_NAME}").build().fromPath(".")
-    kubernetes.image().withName("${env.JOB_NAME}").tag().inRepository("$regPush}/${env.KUBERNETES_NAMESPACE}/${env.JOB_NAME}").withTag(newVersion)
+    kubernetes.image().withName("${env.JOB_NAME}").tag().inRepository("${regPush}/${env.KUBERNETES_NAMESPACE}/${env.JOB_NAME}").withTag(newVersion)
     kubernetes.image().withName("${regPush}/${env.KUBERNETES_NAMESPACE}/${env.JOB_NAME}").push().withTag(newVersion).toRegistry()
 
     return newVersion
