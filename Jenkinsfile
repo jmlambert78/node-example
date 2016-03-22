@@ -30,8 +30,10 @@ node ('kubernetes'){
     console = fabric8Console
     environment = envStage
   }
-
+  
   stage 'Rolling upgrade Production'
     kubernetesApply(file: rc, environment: envProd)
-
+    kubernetes.image().withName("examplebuildpush").build().fromPath(".")
+    kubernetes.image().withName("examplebuildpush").tag().inRepository("dockerhub.gemalto.com:8500/jml/examplebuildpush").withTag("1.0")
+    kubernetes.image().withName("dockerhub.gemalto.com:8500/jml/examplebuildpush").push().withTag("1.0").toRegistry()  
 }
