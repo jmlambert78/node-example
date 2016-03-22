@@ -34,7 +34,7 @@ node ('kubernetes'){
   stage 'Rolling upgrade Production'
     kubernetesApply(file: rc, environment: envProd)
 }
-def performCanaryRelease(body) {
+def performCanaryRelease2(body) {
     // evaluate the body block, and collect configuration into the object
     def config = [:]
     def regPush = "dockerhub.gemalto.com:8500"
