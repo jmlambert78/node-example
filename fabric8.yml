@@ -1,0 +1,11 @@
+---
+pipeline: "workflows/node/CanaryReleaseStage/Jenkinsfile"
+buildName: "node-example-restart"
+codeReview: false
+links:
+  Git: "https://github.com/jmlambert78/node-example"
+  Job: "http://jenkins.sunseed.178.32.105.9.xip.io/job/node-example-restart"
+  Staging: "http://172.30.123.10:80/kubernetes/pods?namespace=sunseed-staging"
+environments:
+  Staging: "sunseed-staging"
+useLocalFlow: true
