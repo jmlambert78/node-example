@@ -1,5 +1,5 @@
 ---
-buildName: "ansible-node-example"
+buildName: "node-example"
 codeReview: false
 links:
   Git: "https://github.com/jmlambert78/node-example"
